@@ -20,6 +20,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.Set;
 
 
@@ -96,9 +97,15 @@ import java.util.Set;
 				
 						 try {
 					
-					         File f = new File("src/com/codechallege/courses.csv");
-					         BufferedReader b = new BufferedReader(new FileReader(f));
-					
+					         //File f = new File("src/com/codechallege/courses.csv");
+							 Scanner scanner = new Scanner(System.in);
+							 System.out.print("Enter courses file name: ");
+							 System.out.flush();
+							 String filename = scanner.nextLine();
+							 File f = new File(filename);
+							// File f = new File("src/com/codechallege/courses.csv");
+							  BufferedReader b = new BufferedReader(new FileReader(f));
+					        
 					         String readLine = "";
 					          while ((readLine = b.readLine()) != null) {
 					             ////System.out.println(readLine);
@@ -123,8 +130,12 @@ import java.util.Set;
 						try {
 							 
 							    //Read prerequisites From prerequisites.csv  file
-					            File f = new File("src/com/codechallege/prerequisites.csv");
-			
+					           // File f = new File("src/com/codechallege/prerequisites.csv");
+							 Scanner scanner = new Scanner(System.in);
+							 System.out.print("Enter the prerequisites file name: ");
+							 System.out.flush();
+							 String filename = scanner.nextLine();
+							 File f = new File(filename);
 					            BufferedReader b = new BufferedReader(new FileReader(f));
 			
 					            String readLine = "";
