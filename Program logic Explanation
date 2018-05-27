@@ -1,9 +1,9 @@
 
 Logic Explanation:
 -----------------
-*This program is developed based on the logic of completing the course with least prerequisites which is zero prerequisite course
+* This program is developed based on the logic of completing the course with least prerequisites which is zero prerequisite course
 
-*To start with, I have created Maps for the below
+* To start with, I have created Maps for the below
 	- collecting courses id and its corresponding description
 	- collecting courses id and its corresponding prerequisites
 	- collecting the prequisties as key and the course dependent which is reverse mapping of the above
@@ -15,9 +15,20 @@ Logic Explanation:
 
 Logic applied:
 --------------
-*Logic is applied recursively to drill down to zero prereq course and remove from the other courses which is dependent on this completed course.
+* Logic is applied recursively to drill down to zero prereq course and remove from the other courses which is dependent on this completed course.
 
 * At the end of the recursion it gives the list of all courses in the order so that there is no remaining prereq courses.
+
+Challenges faced:
+-----------------
+* When I started developing, I was sure to implement with a recursive function as searching the zero prerequisite dependent course
+  is a repeated process. Looping through each course from the beginning is a complex process. So planned to start from the courses
+  with zero dependent and remove this number from prerquisites of the courses dependent. 
+  In that way,  finding the course with zero prereq, removing completed from course prerequisite of the other courses and adding to the completed list reduces the number
+  of loops. This was a major challenge faced during the development process
+ 
+ * Using reverse mapping(prerequisite-courses) of course-prerequisite map, I could find the courses which is dependent on the prereq without looping all the courses 
+   repeatedly.
 
 Result:
 -------
