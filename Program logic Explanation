@@ -1,0 +1,32 @@
+
+Logic Explanation:
+-----------------
+*This program is developed based on the logic of completing the course with least prerequisites which is zero prerequisite course
+
+*To start with, I have created Maps for the below
+	- collecting courses id and its corresponding description
+	- collecting courses id and its corresponding prerequisites
+	- collecting the prequisties as key and the course dependent which is reverse mapping of the above
+
+* Created Lists for the below
+	- collecting the temporary list of completed courses to remove it from the prerequisites of the dependent course
+	eg) if 1 has no prereq then 1 should be removed from other courses which has prereq as 1 and move 1 to the final list
+	- collecting the final list of completed courses
+
+Logic applied:
+--------------
+*Logic is applied recursively to drill down to zero prereq course and remove from the other courses which is dependent on this completed course.
+
+* At the end of the recursion it gives the list of all courses in the order so that there is no remaining prereq courses.
+
+Result:
+-------
+From the result found that there are 3 courses whic are dependent on each other which forms a deadlock and can never be completed
+
+To run the program:
+-------------------
+While executing the script please provide the two csv files first the courses.csv and next prerequisites.csv
+
+Note:
+----
+In both the files the column heading(id, description) should be removed as the program uses fileReader which converts it to Integer.
